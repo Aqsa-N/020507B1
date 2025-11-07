@@ -1,0 +1,17 @@
+[{
+    "brand":"iphone",
+    "model":"14 pro",
+    "price":120000,
+    "image":""
+},
+{
+    "brand":"infinix",
+    "model":"note 10",
+    "price":20000
+},
+{
+    "brand":"realme",
+    "model":"spark go",
+    "price":40000
+}
+]

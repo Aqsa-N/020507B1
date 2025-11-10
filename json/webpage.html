@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            border: 2px solid black;
+            width: 250px;
+        }
+        .row
+        {display: flex;
+        justify-content: space-around;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="showproducts">
+           
+        </div>
+    </div>
+    <script>
+        var col="";
+        fetch('producots.json')
+        .then(response => response.json())
+        .then(a => {
+            for(var i of a){
+  col+=`<div class="col">
+                <div class="card">
+                    <div class="card-img"><img src="${i.image}" alt="" width='250px'></div>
+                    <h2 class="card-title">${i.brand}</h2>
+                    <p class="card-des">${i.model}</p>
+                    <p class="card-des">${i.price}</p>
+                    <button>order</button>
+                </div>
+            </div>`
+            }
+            document.getElementById('showproducts').innerHTML=col;
+        });
+    </script>
+</body>
+</html>

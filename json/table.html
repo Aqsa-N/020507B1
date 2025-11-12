@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>brand</th>
+                <th>model</th>
+                <th>price</th>
+                <th>image</th>
+            </tr>
+            
+        </thead>
+        <tbody id="data">
+           
+        </tbody>
+    </table>
+    <script>
+        var tr="";
+        fetch("products.json")
+        .then(response => response.json())
+        .then(b => {
+            for(var x of b){
+tr+=`<tr>
+    <td>${x.brand}</td>
+            <td>${x.model}</td>
+            <td>${x.price}</td>
+            <td><img src="${x.image}" alt="" height="100px"></td></tr>`
+            }
+            document.getElementById('data').innerHTML=tr;
+ 
+            
+        })
+    </script>
+</body>
+</html>
